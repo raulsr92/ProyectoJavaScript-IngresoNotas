@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilos.css">
+    <script src="https://kit.fontawesome.com/33e3caf9b6.js" crossorigin="anonymous"></script>
     <title>Portal del docente</title>
 </head>
 <body>
@@ -18,16 +19,65 @@
 
         <div class="search--bar">
             <input type="text">
-            <span> Icon</span>
+            <span> <i class="fa-solid fa-magnifying-glass"></i> </span>
         </div>
 
         <div class="menu--login">
-            <a href="">Login</a>
+            <a href="">Login <i class="fa-solid fa-user"></i></a>
         </div>
     </header>
 
     <main>
+        <section class="main__input">
+            <h1> Bienvenido Docente! </h1>
+            <form action="">
+                <fieldset>
+                    <legend> Ingreso de Alumnos</legend>
 
+                    <i class="fa-solid fa-child"></i>
+                    <label for="alumno">Alumno</label>
+                    <input type="text" id="alumno" name="alumno">
+
+                    <i class="fa-regular fa-clipboard"></i>
+                    <label for="grades">Nota</label>
+                    <input type="number" name="grade" id="grades">
+                    <input type="submit" value="Ingresar registro">
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="main__statistics">
+            <h3>En esta sección puede visualizar las estadísticas de las notas de su curso.</h3>
+            <div class="statistics__promedio">
+                <button class="btn--promedio">Promedio</button> 
+                <i class="fa-solid fa-question"></i>
+                <aside>
+                    <h4> Promedio</h4>
+                    <p> También conocida como media, es una medida de tendencia central que es igual al promedio aritmético de un conjunto de datos, que se obtiene al sumarlos y el resultado se divide entre el número de datos.</p>
+                </aside>
+            </div>
+            <div class="statistics__mediana">
+                <button class="btn--mediana">Mediana</button>
+                <i class="fa-solid fa-question"></i>
+                <aside>
+                    <h4> Mediana</h4>
+                    <p> También conocida como media, es una medida de tendencia central que es igual al promedio aritmético de un conjunto de datos, que se obtiene al sumarlos y el resultado se divide entre el número de datos.</p>
+                </aside>
+            </div>
+            <div class="statistics__moda">
+                <button class="btn--moda">Mediana</button>
+                <i class="fa-solid fa-question"></i>
+                <aside>
+                    <h4> Moda</h4>
+                    <p> También conocida como media, es una medida de tendencia central que es igual al promedio aritmético de un conjunto de datos, que se obtiene al sumarlos y el resultado se divide entre el número de datos.</p>
+                </aside>
+            </div>
+            
+            <div class="statistics__result">
+                <p class="result--text"> El promedio de notas de su curso es:  <span> 20</span> </p>
+
+            </div>
+        </section>
     </main>
 
     <footer>
