@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a, p{
+    font-size: 20px;
+}
+
+/*Estilos del Header*/
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+}
