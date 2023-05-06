@@ -28,6 +28,9 @@ header{
     background-color: #9B59B6 ;
     padding: 45px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 10px;
 }
 
 body{
@@ -38,7 +41,7 @@ body{
 }
 
 .menu--options{
-    margin-right: 140px;
+    flex-grow: 1;
 }
 
 .menu--options ul{
@@ -64,12 +67,39 @@ body{
     padding-right: 10px;
 }
 
+.search--bar{
+    flex-grow: 1;
+}
 
-
+.search--bar input{
+    outline: none;
+    padding-left: 15px;
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid #F9E79F;
+}
+.fa-magnifying-glass{
+    font-size: 30px;
+    color: #F9E79F;
+}
 
 .menu--login{
     margin-left: auto;
+    align-self: center;
 }
+
+.menu--login a{
+    display: block;
+    height: 54px;
+    width: 120px;
+    text-align: center;
+    background-color: #F9E79F;
+    color: #9B59B6;
+    padding-top: 12px;
+    border-radius: 12px;
+}
+
 
 
 
