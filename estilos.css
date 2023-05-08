@@ -106,15 +106,22 @@ main{
     display: grid;
     grid-template-rows: 1fr 1fr;
     width: 100%;
-
+    height: auto;
+    min-width: 360px;
 }
 
 .main__input{
-    width: 100%;
+    width: 90%;
+    height: auto;
+    min-width: 360px;
     display: grid;
     grid-template-rows: 1fr 4fr;
     justify-content: center;
     margin-bottom: 30px;
+
+    border-bottom: 4px solid #6C3483;
+    margin: 0 auto;
+    
 }
 
 .main__input h1{
@@ -147,6 +154,7 @@ main{
     background-color: #FEF9E7;
     gap: 20px;
     justify-self: center;
+    margin-bottom: 50px;
 }
 
 .item0{
@@ -228,8 +236,50 @@ main{
 }
 
 
+/* Estilos del main - estadísticas */
+
+.main__statistics{
+    width: 70%;
+    height: auto;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 30px;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    " titulo titulo titulo"
+    " media result result"
+    " mediana result result"
+    " moda result result"
+
+    ;
+}
+.tittle--statistics{
+    grid-area: titulo;
+}
+
+.statistics__promedio{
+    grid-area: media;
+}
+
+.statistics__mediana{
+    grid-area: mediana;
+}
+
+.statistics__moda{
+    grid-area: moda;
+}
+
+.statistics__result{
+    grid-area: result;
+}
+
 /*Estilos del Footer*/
 
 footer{
     background-color: #C39BD3;
+    width: 100%;
+    height: auto;
+    min-width: 360px;
 }
