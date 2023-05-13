@@ -108,6 +108,9 @@ main{
     width: 100%;
     height: auto;
     min-width: 360px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    row-gap: 40px;
 }
 
 .main__input{
@@ -154,7 +157,7 @@ main{
     background-color: #FEF9E7;
     gap: 20px;
     justify-self: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .item0{
@@ -252,7 +255,6 @@ main{
     " media result result"
     " mediana result result"
     " moda result result"
-
     ;
 }
 .tittle--statistics{
@@ -331,11 +333,107 @@ main{
     text-align: center;
 }
 
+.inactive{
+    display: none;
+}
+
 /*Estilos del Footer*/
 
 footer{
-    background-color: #C39BD3;
+    background-color: #9B59B6;
     width: 100%;
     height: auto;
     min-width: 360px;
+    display: flex;
+    padding: 20px 10px 20px 80px;
+    column-gap: 80px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer--right{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    row-gap: 40px;
+}
+
+.footer--left{
+    flex-grow: 1;
+    align-self: center;
+}
+
+.footer--right div{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+    "red1 red2 red3  red4 red5"
+    "redicon1 redicon2 redicon3 redicon4 redicon5"
+    ;
+    row-gap: 10px;
+}
+
+.footer--right p{
+    align-self: center;
+}
+
+footer p{
+    color: white;
+    text-transform: uppercase;
+}
+
+.element1{
+    grid-area: red1;
+    justify-self: center;
+}
+
+.element2{
+    grid-area: redicon1;
+    justify-self: center;
+
+}
+.element3{
+    grid-area: red2;  
+    justify-self: center;
+
+}
+.element4{
+    grid-area: redicon2;
+    justify-self: center;
+
+}
+
+.element5{
+    grid-area: red3;  
+    justify-self: center;
+
+}
+.element6{
+    grid-area: redicon3;
+    justify-self: center;
+}
+
+.element7{
+    grid-area: red4;  
+    justify-self: center;
+}
+
+.element8{
+    grid-area: redicon4;
+    justify-self: center;
+}
+
+.element9{
+    grid-area: red5;  
+    justify-self: center;
+}
+
+.element10{
+    grid-area: redicon5;
+    justify-self: center;
+}
+
+.fa-brands{
+    color: white;
 }
