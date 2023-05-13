@@ -94,3 +94,32 @@ footer{
 .item7{
     width: 90%;
 }
+
+.main__statistics{
+    padding: 0;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    " titulo titulo titulo"
+    " media mediana moda"
+    " result result result"
+    ;
+}
+.statistics__result{
+    width: 100%;
+    height: 100%;
+}
+
+.tittle--statistics{
+    line-height: 48px;
+}
+
+.statistics__promedio, .statistics__mediana, .statistics__moda{
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.btn--mediana, .btn--promedio, .btn--moda{
+    width: 90%;
+}
