@@ -361,6 +361,12 @@ footer{
 .footer--left{
     flex-grow: 1;
     align-self: center;
+    border-right: 5px solid #F4D03F ;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.footer--left p{
+    color: #F4D03F ; 
 }
 
 .footer--right div{
@@ -378,8 +384,12 @@ footer{
     align-self: center;
 }
 
+.follow--me{
+    color: #F4D03F ;
+}
+
 footer p{
-    color: white;
+    color: #F4D03F ;
     text-transform: uppercase;
 }
 
@@ -435,5 +445,6 @@ footer p{
 }
 
 .fa-brands{
-    color: white;
+    color: #F4D03F ;
+    font-size: 30px;
 }
