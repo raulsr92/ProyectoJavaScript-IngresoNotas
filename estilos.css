@@ -366,7 +366,8 @@ footer{
     padding-bottom: 50px;
 }
 .footer--left p{
-    color: #F4D03F ; 
+    color: #F4D03F ;
+    font-weight: 700; 
 }
 
 .footer--right div{
@@ -382,6 +383,8 @@ footer{
 
 .footer--right p{
     align-self: center;
+    font-weight: 700; 
+
 }
 
 .follow--me{
@@ -391,6 +394,8 @@ footer{
 footer p{
     color: #F4D03F ;
     text-transform: uppercase;
+    font-weight: 700; 
+
 }
 
 .element1{
