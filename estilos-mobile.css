@@ -1,3 +1,43 @@
+/*Estilos del Header para móviles*/
+
+header{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "nav login"
+    "search search"
+    ;
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.menu--options{
+    grid-area: nav;
+}
+
+.search--bar{
+    grid-area: search;
+    display: flex;
+    column-gap: 10px;
+}
+.search--bar span{
+    flex-grow: 1;
+    align-self: center;
+}
+
+.menu--login{
+    grid-area: login;
+}
+
+.search--bar input{
+    width: 80%;
+}
+
+
+
+/*Estilos del Footer para móviles*/
+
 footer{
     padding: 20px;
 }
