@@ -60,5 +60,37 @@ footer{
     display: none;
 }
 
+/*Estilos del Main para móviles*/
 
+.main__input form{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "text text"
+    "icon1 student"
+    "input1 input1"
+    "icon2 name "
+    "input2 input2"
+    "button button ";
+    column-gap: 10px;
+    row-gap: 30px
+}
 
+.item1, .item4{
+    justify-self: start;
+}
+
+.item2, .item5{
+    text-transform: uppercase;
+}
+
+.item3, .item6{
+    width: 95%;
+    height: 50px;
+    justify-self: end;
+}
+
+.item7{
+    width: 90%;
+}
