@@ -153,3 +153,11 @@ main{
 .inactive2{
     display: block;
 }
+
+/*Poscionando las tarjetas*/
+
+.statistic--detail{
+    top: 80%;
+    left: unset;
+}
+

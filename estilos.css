@@ -264,6 +264,7 @@ main{
 
 .statistics__mediana{
     grid-area: mediana;
+    position: relative;
 }
 
 .statistics__moda{
@@ -461,8 +462,10 @@ footer p{
     height: auto;
     border-radius: 40px;
     border: 4px solid #9B59B6;
-    padding: 20px 20px 40px 20px;
+    padding: 20px 20px 15px 20px;
     background-color: #FBF0D5;
+    position: absolute;
+    left: 90%;
 }
 
 .statistic--detail h4{
@@ -482,5 +485,6 @@ footer p{
     font-size: 16px;
     padding-bottom: 10px;
     text-align: center;
+    line-height: 25px;
 }
 
