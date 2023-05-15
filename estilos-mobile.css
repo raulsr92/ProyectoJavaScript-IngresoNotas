@@ -135,6 +135,9 @@ main{
 
 .tittle--statistics{
     line-height: 48px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
 }
 
 .statistics__promedio, .statistics__mediana, .statistics__moda{
@@ -145,4 +148,8 @@ main{
 .btn--mediana, .btn--promedio, .btn--moda{
     width: 90%;
     font-size: 16px;
+}
+
+.inactive2{
+    display: block;
 }

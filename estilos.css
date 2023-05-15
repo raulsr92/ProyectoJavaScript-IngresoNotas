@@ -450,3 +450,6 @@ footer p{
     color: #F4D03F ;
     font-size: 30px;
 }
+.inactive{
+    display: none;
+}
