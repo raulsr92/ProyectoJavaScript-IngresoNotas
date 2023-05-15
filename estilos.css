@@ -37,7 +37,6 @@ body{
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-rows: 0.5fr 3fr 0.5fr;
 }
 
 .menu--options{
@@ -123,6 +122,7 @@ main{
 
     border-bottom: 4px solid #6C3483;
     margin: 0 auto;
+    row-gap: 20px;
 }
 
 .main__input h1{
