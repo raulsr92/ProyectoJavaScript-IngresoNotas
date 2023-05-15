@@ -60,6 +60,11 @@ footer{
     display: none;
 }
 
+.footer--right{
+    margin-bottom: 40px;
+
+}
+
 /*Estilos del Main para móviles*/
 
 .main__input form{

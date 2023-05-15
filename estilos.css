@@ -342,7 +342,7 @@ footer{
     height: auto;
     min-width: 360px;
     display: flex;
-    padding: 20px 10px 20px 80px;
+    padding: 30px 10px 30px 80px;
     column-gap: 80px;
     align-items: center;
     flex-wrap: wrap;
