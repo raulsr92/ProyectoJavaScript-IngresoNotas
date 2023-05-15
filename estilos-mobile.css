@@ -63,8 +63,9 @@ footer{
 /*Estilos del Main para móviles*/
 
 .main__input form{
+    width: 90%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: repeat(6, auto);
     grid-template-areas: 
     "text text"
@@ -74,7 +75,7 @@ footer{
     "input2 input2"
     "button button ";
     column-gap: 10px;
-    row-gap: 30px
+    row-gap: 20px
 }
 
 .item1, .item4{
@@ -93,6 +94,11 @@ footer{
 
 .item7{
     width: 90%;
+    margin-bottom: 20px;
+
+}
+main{
+    margin-bottom: 100px;
 }
 
 .main__statistics{

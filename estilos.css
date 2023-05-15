@@ -119,12 +119,10 @@ main{
     min-width: 360px;
     display: grid;
     grid-template-rows: 1fr 4fr;
-    justify-content: center;
     margin-bottom: 30px;
 
     border-bottom: 4px solid #6C3483;
     margin: 0 auto;
-    
 }
 
 .main__input h1{
