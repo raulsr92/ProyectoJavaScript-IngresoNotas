@@ -1,19 +1,19 @@
 //Lógica 1//
 
-let btn_pro, btn_mo, btn_me;
+let icon_pro, icon_mo, icon_me;
 
-btn_pro = document.querySelector(".btn--promedio");
-console.log(btn_pro)
+icon_pro = document.querySelector(".quePro");
+console.log(icon_pro)
 
-btn_mo = document.querySelector(".btn--mediana");
-console.log(btn_mo)
+icon_mo = document.querySelector(".queProMo");
+console.log(icon_mo)
 
-btn_me = document.querySelector(".btn--moda");
-console.log(btn_me)
+icon_me = document.querySelector(".queMe");
+console.log(icon_me)
 
 
-btn_pro.addEventListener("click", toggleCard);
+icon_pro.addEventListener("click", toggleCard);
 
-btn_mo.addEventListener("click", toggleCard);
+icon_mo.addEventListener("click", toggleCard);
 
-btn_me.addEventListener("click", toggleCard);
+icon_me.addEventListener("click", toggleCard);
