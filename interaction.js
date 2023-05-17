@@ -14,7 +14,7 @@ cardsList.push(
 cardsList.push(
     {
         name:"Moda",
-        description:"También conocida como media, es una medida de tendencia central que es igual al promedio aritmético de un conjunto de datos, que se obtiene al sumarlos y el resultado se divide entre el número de datos."
+        description:"La moda representa el valor o categoría más común dentro del conjunto de datos. La media, la mediana y la moda son las tres medidas de tendencia central más usadas para poblaciones que no cuentan con demasiados datos, es decir, que no necesitan agruparse."
     }
 );
 
@@ -33,7 +33,7 @@ function crearCards(array){
     
     for (const card of array) {
         const cardAside = document.createElement("aside");
-        cardAside.setAttribute("class", "statistic--detail");
+        cardAside.setAttribute("class", "statistic--detail inactive");
 
         const container  = document.querySelector(".statistics__mediana")
         container.append(cardAside);
@@ -50,25 +50,74 @@ function crearCards(array){
 
 crearCards(cardsList);
 
-
-
-
-
-
 let icon_pro, icon_mo, icon_me;
 
 icon_pro = document.querySelector(".quePro");
 console.log(icon_pro)
 
-icon_mo = document.querySelector(".queProMo");
+icon_mo = document.querySelector(".queMo");
 console.log(icon_mo)
 
 icon_me = document.querySelector(".queMe");
 console.log(icon_me)
 
-/*
-icon_pro.addEventListener("click", toggleCard);
+let cardDef1, cardDef2, cardDef3;
 
-icon_mo.addEventListener("click", toggleCard);
+cardDef1  = document.querySelector(".statistics__mediana aside:nth-child(3)");  //promedio
+console.log(cardDef1);
+cardDef2  = document.querySelector(".statistics__mediana aside:nth-child(4)"); //mediana
+console.log(cardDef2);
+cardDef3  = document.querySelector(".statistics__mediana aside:nth-child(5)"); //moda
 
-icon_me.addEventListener("click", toggleCard);*/
+
+icon_pro.addEventListener("click", toggleCard1);
+
+icon_mo.addEventListener("click", toggleCard2);
+
+icon_me.addEventListener("click", toggleCard3);
+
+
+function toggleCard1(){
+    const isMedianaClose= cardDef2.classList.contains("inactive");
+    const isModaClose= cardDef3.classList.contains("inactive");
+
+    if(!isMedianaClose){
+        cardDef2.classList.add("inactive")
+    } else if(!isModaClose){
+        cardDef3.classList.add("inactive")
+    }
+
+    cardDef1.classList.toggle("inactive");
+    console.log(cardDef1);
+
+};
+
+function toggleCard2(){
+    const isPromedioClose= cardDef1.classList.contains("inactive");
+    const isModaClose= cardDef3.classList.contains("inactive");
+
+    if(!isPromedioClose){
+        cardDef1.classList.add("inactive")
+    } else if(!isModaClose){
+        cardDef3.classList.add("inactive")
+    }
+
+    cardDef2.classList.toggle("inactive");
+    console.log(cardDef2);
+
+};
+
+function toggleCard3(){
+    const isPromedioClose= cardDef1.classList.contains("inactive");
+    const isMedianaClose= cardDef2.classList.contains("inactive");
+
+    if(!isPromedioClose){
+        cardDef1.classList.add("inactive")
+    } else if(!isMedianaClose){
+        cardDef2.classList.add("inactive")
+    }
+
+
+    cardDef3.classList.toggle("inactive");
+    console.log(cardDef3);
+};

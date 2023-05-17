@@ -459,13 +459,18 @@ footer p{
 
 .statistic--detail{
     width: 280px;
-    height: auto;
+    height: 260px;
     border-radius: 40px;
     border: 4px solid #9B59B6;
     padding: 20px 20px 15px 20px;
     background-color: #FBF0D5;
     position: absolute;
     left: 90%;
+    overflow-x:scroll ;
+    overscroll-behavior-y:contain;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 
 .statistic--detail h4{
