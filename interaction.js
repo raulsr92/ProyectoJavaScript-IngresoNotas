@@ -134,15 +134,9 @@ console.log(inputTwo);
 const botonRegistro = document.querySelector(".item7");
 console.log(botonRegistro);
 
-const form = document.querySelector("#form");
-console.log(form);
-
-
-const alumnos = []; 
-
 botonRegistro.addEventListener("click", agregarAlumno);
 
-
+const alumnos = []; 
 
 function agregarAlumno(){
     alumnos.push(
@@ -154,5 +148,20 @@ function agregarAlumno(){
 }
 
 console.log(alumnos);
+
+//Lógica 3//
+
+const botonPromedio = document.querySelector(".btn--promedio");
+console.log(botonPromedio);
+
+const botonMediana = document.querySelector(".btn--mediana");
+console.log(botonMediana);
+
+const botonModa = document.querySelector(".btn--moda");
+console.log(botonModa);
+
+botonPromedio.addEventListener("click", calcularPromedio);
+botonMediana.addEventListener("click", calcularMediana);
+botonModa.addEventListener("click", calcularModa);
 
 
