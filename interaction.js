@@ -79,6 +79,7 @@ icon_me.addEventListener("click", toggleCard3);
 
 function toggleCard1(){
     const isMedianaClose= cardDef2.classList.contains("inactive");
+    console.log(isMedianaClose);
     const isModaClose= cardDef3.classList.contains("inactive");
 
     if(!isMedianaClose){
@@ -121,3 +122,37 @@ function toggleCard3(){
     cardDef3.classList.toggle("inactive");
     console.log(cardDef3);
 };
+
+//Lógica 2//
+
+const inputOne  = document.querySelector("#alumno");
+console.log(inputOne);
+
+const inputTwo  = document.querySelector("#grades");
+console.log(inputTwo);
+
+const botonRegistro = document.querySelector(".item7");
+console.log(botonRegistro);
+
+const form = document.querySelector("#form");
+console.log(form);
+
+
+const alumnos = []; 
+
+botonRegistro.addEventListener("click", agregarAlumno);
+
+
+
+function agregarAlumno(){
+    alumnos.push(
+        {
+            name: inputOne.value,
+            grade: parseInt(inputTwo.value),
+        }
+    );
+}
+
+console.log(alumnos);
+
+
