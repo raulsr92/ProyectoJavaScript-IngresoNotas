@@ -65,9 +65,9 @@ let cardDef1, cardDef2, cardDef3;
 
 cardDef1  = document.querySelector(".statistics__mediana aside:nth-child(3)");  //promedio
 console.log(cardDef1);
-cardDef2  = document.querySelector(".statistics__mediana aside:nth-child(4)"); //mediana
+cardDef2  = document.querySelector(".statistics__mediana aside:nth-child(4)"); //moda
 console.log(cardDef2);
-cardDef3  = document.querySelector(".statistics__mediana aside:nth-child(5)"); //moda
+cardDef3  = document.querySelector(".statistics__mediana aside:nth-child(5)"); //mediana
 
 
 icon_pro.addEventListener("click", toggleCard1);
@@ -76,6 +76,9 @@ icon_mo.addEventListener("click", toggleCard2);
 
 icon_me.addEventListener("click", toggleCard3);
 
+cardDef1.addEventListener("click", closeSelf1);
+cardDef2.addEventListener("click", closeSelf2);
+cardDef3.addEventListener("click", closeSelf3);
 
 function toggleCard1(){
     const isMedianaClose= cardDef2.classList.contains("inactive");
@@ -122,6 +125,28 @@ function toggleCard3(){
     cardDef3.classList.toggle("inactive");
     console.log(cardDef3);
 };
+
+function closeSelf1(){
+    const isPromedioClose= cardDef1.classList.contains("inactive");
+    if(!isPromedioClose){
+        cardDef1.classList.add("inactive")
+    } 
+}
+function closeSelf2(){
+    const isMedianaClose= cardDef2.classList.contains("inactive");
+    if(!isMedianaClose){
+        cardDef2.classList.add("inactive")
+    } 
+}
+
+function closeSelf3(){
+    const isModaClose= cardDef3.classList.contains("inactive");
+    if(!isModaClose){
+        cardDef3.classList.add("inactive")
+    } 
+}
+
+
 
 //Lógica 2//
 
