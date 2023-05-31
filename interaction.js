@@ -145,6 +145,8 @@ function agregarAlumno(){
             grade: parseInt(inputTwo.value),
         }
     );
+    inputOne.value="";
+    inputTwo.value="";
 }
 
 console.log(alumnos);
@@ -160,8 +162,61 @@ console.log(botonMediana);
 const botonModa = document.querySelector(".btn--moda");
 console.log(botonModa);
 
-botonPromedio.addEventListener("click", calcularPromedio);
-botonMediana.addEventListener("click", calcularMediana);
-botonModa.addEventListener("click", calcularModa);
+const message1 = document.querySelector(".result--text");
+console.log(message1);
+
+const message2 = document.querySelector(".result")
+console.log(message2);
 
 
+botonPromedio.addEventListener("click", function(){calcularPromedio(alumnos)});
+
+botonMediana.addEventListener("click", function(){calcularMediana(alumnos)});
+
+botonMediana.addEventListener("click", function(){calcularModa(alumnos)});
+
+
+function calcularPromedio(array){
+    let media, sum, valorInicial;
+
+    valorInicial=0;
+
+    sum = array.reduce((accumulator, currentValue)=> {return (accumulator) + (currentValue.grade)},valorInicial);
+    console.log(sum);
+    
+    media=sum/array.length;
+    console.log(media);
+
+    //Aperturar el campo para mostrar resultado
+    const isMessage1Closed = message1.classList.contains("inactive");
+    console.log(isMessage1Closed);
+
+    const isMessage2Closed = message2.classList.contains("inactive");
+    console.log(isMessage2Closed);
+
+    if(isMessage1Closed){
+        message1.classList.remove("inactive");
+        console.log(message1.classList.contains("inactive"));
+        message1.innerHTML="El promedio es: ";
+    }else{
+        message1.innerHTML="El promedio es: ";
+    }
+
+    if(isMessage2Closed){
+        message2.classList.remove("inactive");
+        console.log(message2.classList.contains("inactive"));
+        message2.innerHTML=media;
+
+    }else{
+        message2.innerHTML=media;
+    }
+
+};
+
+function calcularMediana(array){
+
+};
+
+function calcularModa(array){
+
+};
