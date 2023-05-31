@@ -178,39 +178,40 @@ botonMediana.addEventListener("click", function(){calcularModa(alumnos)});
 
 function calcularPromedio(array){
     let media, sum, valorInicial;
-
     valorInicial=0;
 
-    sum = array.reduce((accumulator, currentValue)=> {return (accumulator) + (currentValue.grade)},valorInicial);
-    console.log(sum);
-    
-    media=sum/array.length;
-    console.log(media);
-
-    //Aperturar el campo para mostrar resultado
     const isMessage1Closed = message1.classList.contains("inactive");
     console.log(isMessage1Closed);
-
     const isMessage2Closed = message2.classList.contains("inactive");
     console.log(isMessage2Closed);
 
-    if(isMessage1Closed){
-        message1.classList.remove("inactive");
-        console.log(message1.classList.contains("inactive"));
-        message1.innerHTML="El promedio es: ";
-    }else{
-        message1.innerHTML="El promedio es: ";
+    if(array.length==0){
+    window.alert("¡No se han ingresado notas!.")
+
+    } else{
+        sum = array.reduce((accumulator, currentValue)=> {return (accumulator) + (currentValue.grade)},valorInicial);
+        console.log(sum);
+        
+        media=sum/array.length;
+        console.log(media);
+    
+        //Aperturar el campo para mostrar resultado    
+        if(isMessage1Closed){
+            message1.classList.remove("inactive");
+            console.log(message1.classList.contains("inactive"));
+            message1.innerHTML="El promedio es: ";
+        }else{
+            message1.innerHTML="El promedio es: ";
+        }
+        if(isMessage2Closed){
+            message2.classList.remove("inactive");
+            console.log(message2.classList.contains("inactive"));
+            message2.innerHTML=media.toFixed(2);
+    
+        }else{
+            message2.innerHTML=media.toFixed(2);
+        }
     }
-
-    if(isMessage2Closed){
-        message2.classList.remove("inactive");
-        console.log(message2.classList.contains("inactive"));
-        message2.innerHTML=media;
-
-    }else{
-        message2.innerHTML=media;
-    }
-
 };
 
 function calcularMediana(array){

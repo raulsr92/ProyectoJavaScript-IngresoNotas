@@ -493,3 +493,8 @@ footer p{
     line-height: 25px;
 }
 
+.statistics__result .result{
+    font-weight: bold;
+    color: #E74C3C ;
+}
+
