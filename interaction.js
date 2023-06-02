@@ -165,9 +165,11 @@ const alumnos = [];
 
 function agregarAlumno(){
 
-    if(inputOne.value==0 || inputTwo.value==0){
+    if(inputOne.value=="" || inputTwo.value==""){
         alert("No deje campos vacíos")
 
+    } else if (inputTwo.value<0 || inputTwo.value>20){
+        alert("Las notas deben estar en el rango entre 0 y 20")
     } else{
         alumnos.push(
             {
@@ -178,7 +180,6 @@ function agregarAlumno(){
         inputOne.value="";
         inputTwo.value="";
     }
-
 }
 
 console.log(alumnos);
