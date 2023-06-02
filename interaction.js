@@ -164,14 +164,21 @@ botonRegistro.addEventListener("click", agregarAlumno);
 const alumnos = []; 
 
 function agregarAlumno(){
-    alumnos.push(
-        {
-            name: inputOne.value,
-            grade: parseInt(inputTwo.value),
-        }
-    );
-    inputOne.value="";
-    inputTwo.value="";
+
+    if(inputOne.value==0 || inputTwo.value==0){
+        alert("No deje campos vacíos")
+
+    } else{
+        alumnos.push(
+            {
+                name: inputOne.value,
+                grade: parseInt(inputTwo.value),
+            }
+        );
+        inputOne.value="";
+        inputTwo.value="";
+    }
+
 }
 
 console.log(alumnos);
@@ -198,7 +205,7 @@ botonPromedio.addEventListener("click", function(){calcularPromedio(alumnos)});
 
 botonMediana.addEventListener("click", function(){calcularMediana(alumnos)});
 
-botonMediana.addEventListener("click", function(){calcularModa(alumnos)});
+botonModa.addEventListener("click", function(){calcularModa(alumnos)});
 
 
 function calcularPromedio(array){
@@ -240,9 +247,14 @@ function calcularPromedio(array){
 };
 
 function calcularMediana(array){
-
+    if(array.length==0){
+        window.alert("¡No se han ingresado notas!.")
+    
+        }
 };
 
 function calcularModa(array){
-
+    if(array.length==0){
+        window.alert("¡No se han ingresado notas!.")
+    }
 };
