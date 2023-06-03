@@ -208,6 +208,7 @@ botonMediana.addEventListener("click", function(){calcularMediana(alumnos)});
 
 botonModa.addEventListener("click", function(){calcularModa(alumnos)});
 
+//Cálculo_del_promedio
 
 function calcularPromedio(array){
     let media, sum, valorInicial;
@@ -247,12 +248,82 @@ function calcularPromedio(array){
     }
 };
 
+//Cálculo_de_la_mediana
+
+function esPar(array){
+	if (array.length % 2==0){
+		return true
+	} else {
+		return false
+	}
+}
+
+function esImpar(array){
+	if(array.length%2==1){
+		return true
+	} else{
+		return false
+	}
+}
+
+function ordenarLista(array){
+		
+    const arraySorted = array.sort((a,b)=>{return a.grade-b.grade});
+
+    return arraySorted;
+}
+
+
+
 function calcularMediana(array){
+    let mediana, indiceMediana, arraySorted;
+
+    const isMessage1Closed = message1.classList.contains("inactive");
+    console.log(isMessage1Closed);
+    const isMessage2Closed = message2.classList.contains("inactive");
+    console.log(isMessage2Closed);
+
     if(array.length==0){
         window.alert("¡No se han ingresado notas!.")
     
+    } else{
+        arraySorted = ordenarLista(array);  
+        console.log(arraySorted);
+
+        if(esImpar(arraySorted)){
+            indiceMediana = ((arraySorted.length+1)/2)-1; //le resto 1 porque un array inicia en 0
+            mediana = (arraySorted[indiceMediana]).grade;
+            console.log(mediana);
+        } else if(esPar(arraySorted)){
+            let indiceMediana1= (arraySorted.length/2)-1; //le resto 1 porque un array inicia en 0
+            let indiceMediana2= indiceMediana1 + 1;
+            mediana = ((arraySorted[indiceMediana1]).grade+(arraySorted[indiceMediana2]).grade)/2;
+            console.log(mediana);
         }
+        
+         //Aperturar el campo para mostrar resultado    
+         if(isMessage1Closed){
+            message1.classList.remove("inactive");
+            console.log(message1.classList.contains("inactive"));
+            message1.innerHTML="La mediana es: ";
+        }else{
+            message1.innerHTML="La mediana es: ";
+        }
+        if(isMessage2Closed){
+            message2.classList.remove("inactive");
+            console.log(message2.classList.contains("inactive"));
+            message2.innerHTML=mediana.toFixed(2);
+    
+        }else{
+            message2.innerHTML=mediana.toFixed(2);
+        }      
+
+    }
 };
+
+
+
+
 
 function calcularModa(array){
     if(array.length==0){
