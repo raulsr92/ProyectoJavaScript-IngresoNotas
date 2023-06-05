@@ -321,12 +321,106 @@ function calcularMediana(array){
     }
 };
 
-
-
-
-
 function calcularModa(array){
+    let UniModa ;
+    let BiModa = {};
+    let indices = [];
+    const listaGrades = {};
+
+
+    const isMessage1Closed = message1.classList.contains("inactive");
+    const isMessage2Closed = message2.classList.contains("inactive");
+
     if(array.length==0){
         window.alert("¡No se han ingresado notas!.")
+    } else{
+
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i].grade;
+            console.log(element);
+
+            let claves = Object.keys(listaGrades);
+            console.log(claves);
+            let isRepetido = claves.find(values => values == element);
+            console.log(isRepetido);
+            if(isRepetido){
+                listaGrades[element] = listaGrades[element]+1;
+            } else{
+                listaGrades[element] = 1;
+            }
+            console.log(listaGrades);
+        }
+
+        let valores = Object.values(listaGrades);
+        console.log(valores);
+        let claves = Object.keys(listaGrades);
+        console.log(claves);
+        let mayor = valores[0];
+        for (let j = 0; j < valores.length; j++) {
+            if(valores[j]>mayor){
+                mayor = valores[j];
+            }            
+        }
+        console.log(mayor);
+
+        let mayores =valores.filter(value=>value==mayor);
+        console.log(mayores);
+
+        let idx = valores.indexOf(mayor);
+        while(idx !== -1){
+            indices.push(idx);
+            idx = valores.indexOf(mayor, idx +1);
+        }
+        console.log(indices);
+
+        
+        if (mayores.length==2){
+
+            BiModa["moda1"] = claves[indices[0]];
+            BiModa["moda2"] = claves[indices[1]];
+            console.log(BiModa);
+
+        //Aperturar el campo para mostrar resultado   
+        if(isMessage1Closed){
+            message1.classList.remove("inactive");
+            message1.innerHTML="La(s) moda(s) es(son): ";
+        }else{
+            message1.innerHTML="La(s) moda(s) es(son): ";
+        }
+        if(isMessage2Closed){
+            message2.classList.remove("inactive");
+            message2.innerHTML=moda["moda1"]+" y "+moda["moda2"];
+    
+        }else{
+            message2.innerHTML=moda["moda1"]+" y "+moda["moda2"];
+        }          
+    
+        } else if(mayores.length>2){
+            for (let k = 0; k < indices.length; k++) {
+                BiModa[k+1] =  claves[indices[k]];
+            }
+            console.log(BiModa);
+    
+            let modaKeys = Object.keys(BiModa);
+            console.log(modaKeys.length)
+            let modaValues = Object.values(BiModa);
+    
+            for (let l = 0; l < modaKeys.length; l++) {
+                const atributo = modaKeys[l];            
+                console.log(`El array es multimodal. La moda N° ${atributo} es ${moda[atributo]}`)
+            }
+        } else{
+
+        }
+
+
+        
+/*
+        indexOfModa = valores.indexOf(mayor);
+        console.log(indexOfModa);
+        moda= claves[indexOfModa]; 
+        console.log(moda);*/
+
+       
     }
 };
