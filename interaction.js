@@ -274,7 +274,6 @@ function ordenarLista(array){
 }
 
 
-
 function calcularMediana(array){
     let mediana, indiceMediana, arraySorted;
 
@@ -321,12 +320,13 @@ function calcularMediana(array){
     }
 };
 
+//Cálculo_de_la_moda (incluye bimodal y multimoda)
+
 function calcularModa(array){
-    let UniModa ;
+    let claves,  valores, isRepetido, mayor, mayores, idx, modaKeys;
     let BiModa = {};
     let indices = [];
     const listaGrades = {};
-
 
     const isMessage1Closed = message1.classList.contains("inactive");
     const isMessage2Closed = message2.classList.contains("inactive");
@@ -339,9 +339,8 @@ function calcularModa(array){
             const element = array[i].grade;
             console.log(element);
 
-            let claves = Object.keys(listaGrades);
-            console.log(claves);
-            let isRepetido = claves.find(values => values == element);
+            claves = Object.keys(listaGrades);
+            isRepetido = claves.find(values => values == element);
             console.log(isRepetido);
             if(isRepetido){
                 listaGrades[element] = listaGrades[element]+1;
@@ -351,29 +350,30 @@ function calcularModa(array){
             console.log(listaGrades);
         }
 
-        let valores = Object.values(listaGrades);
+        valores = Object.values(listaGrades);
         console.log(valores);
-        let claves = Object.keys(listaGrades);
+        claves = Object.keys(listaGrades);
         console.log(claves);
-        let mayor = valores[0];
+        mayor = valores[0];
         for (let j = 0; j < valores.length; j++) {
             if(valores[j]>mayor){
                 mayor = valores[j];
             }            
         }
-        console.log(mayor);
+        console.log(mayor); //Nro de repeticiones de la moda
 
-        let mayores =valores.filter(value=>value==mayor);
+        // Buscar cuantas modas hay buscando el número de veces que se repite el mayor valor de LISTAGRADES
+        mayores =valores.filter(value=>value==mayor);
         console.log(mayores);
 
-        let idx = valores.indexOf(mayor);
+        idx = valores.indexOf(mayor);
         while(idx !== -1){
             indices.push(idx);
             idx = valores.indexOf(mayor, idx +1);
         }
         console.log(indices);
 
-        
+        //Si tiene 2 modas, porque el elemeto mayor se repite 2 veces en el array VALORES de LISTAGRADES
         if (mayores.length==2){
 
             BiModa["moda1"] = claves[indices[0]];
@@ -383,16 +383,16 @@ function calcularModa(array){
         //Aperturar el campo para mostrar resultado   
         if(isMessage1Closed){
             message1.classList.remove("inactive");
-            message1.innerHTML="La(s) moda(s) es(son): ";
+            message1.innerHTML="Bimodal. Las modas son: ";
         }else{
-            message1.innerHTML="La(s) moda(s) es(son): ";
+            message1.innerHTML="Bimodal. Las modas son: ";
         }
         if(isMessage2Closed){
             message2.classList.remove("inactive");
-            message2.innerHTML=moda["moda1"]+" y "+moda["moda2"];
+            message2.innerHTML=BiModa["moda1"]+" y "+BiModa["moda2"];
     
         }else{
-            message2.innerHTML=moda["moda1"]+" y "+moda["moda2"];
+            message2.innerHTML=BiModa["moda1"]+" y "+BiModa["moda2"];
         }          
     
         } else if(mayores.length>2){
@@ -401,26 +401,76 @@ function calcularModa(array){
             }
             console.log(BiModa);
     
-            let modaKeys = Object.keys(BiModa);
+            modaKeys = Object.keys(BiModa);
             console.log(modaKeys.length)
-            let modaValues = Object.values(BiModa);
     
             for (let l = 0; l < modaKeys.length; l++) {
                 const atributo = modaKeys[l];            
-                console.log(`El array es multimodal. La moda N° ${atributo} es ${moda[atributo]}`)
+                console.log(`El array es multimodal. La moda N° ${atributo} es ${BiModa[atributo]}`)
+
+                
+                if(isMessage1Closed){
+                    message1.classList.remove("inactive");
+                    message1.innerHTML="Las modas son: ";
+                }else{
+                    message1.innerHTML="Las modas son:";
+                }
+
+                if(l == 0){
+                    if(isMessage2Closed){
+                        message2.classList.remove("inactive");
+                        // si iniciamos a anexar con APPEND, se mostrarán resultados anteriores de MEDIA o MEDIANA
+                        message2.innerHTML=BiModa[atributo];
+                        message2.append( ", ") ;
+                    }else{
+                        message2.innerHTML=BiModa[atributo];
+                        message2.append( ", ") ;
+                    }  
+                } else if (l>0 && l<modaKeys.length-1){
+                    if(isMessage2Closed){
+                        message2.append(BiModa[atributo], ", ") ;
+                    }else {
+                        message2.append(BiModa[atributo], ", ") ;
+                    }    
+                } else if(l==modaKeys.length-1){
+                    if(isMessage2Closed){
+                        message2.append("y "+BiModa[atributo], ".") ;
+
+                    }else {
+                        message2.append("y "+BiModa[atributo], ".") ;
+                    }    
+                }
+ 
+                
             }
+
+        //Aperturar el campo para mostrar resultado   
+
         } else{
 
+            BiModa["moda1"] = claves[indices[0]];
+            console.log(BiModa);
+
+        //Aperturar el campo para mostrar resultado   
+        if(isMessage1Closed){
+            message1.classList.remove("inactive");
+            message1.innerHTML="La moda es:  ";
+        }else{
+            message1.innerHTML="La moda es:  ";
         }
-
-
-        
+        if(isMessage2Closed){
+            message2.classList.remove("inactive");
+            message2.innerHTML=BiModa["moda1"];
+    
+        }else{
+            message2.innerHTML=BiModa["moda1"];
+        } 
+        }
+     
 /*
         indexOfModa = valores.indexOf(mayor);
         console.log(indexOfModa);
         moda= claves[indexOfModa]; 
-        console.log(moda);*/
-
-       
+        console.log(moda);*/       
     }
 };
