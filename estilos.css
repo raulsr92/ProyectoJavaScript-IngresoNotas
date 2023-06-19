@@ -30,7 +30,7 @@ header{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: 10px;
+    column-gap: 10px;
 }
 
 body{
@@ -362,6 +362,7 @@ footer{
     border-right: 5px solid #F4D03F ;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-right: 30px;
 }
 .footer--left p{
     color: #F4D03F ;
